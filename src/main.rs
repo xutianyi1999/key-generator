@@ -17,7 +17,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 let priv_key = cert.serialize_private_key_pem();
 
                 fs::write("./cert.pem", cert_pem)?;
-                fs::write("priv.key", priv_key)?;
+                fs::write("./priv.key", priv_key)?;
             }
             "der" => {
                 let cert_der = cert.serialize_der()?;
