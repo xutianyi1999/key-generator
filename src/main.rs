@@ -18,6 +18,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
                 fs::write("./cert.pem", cert_pem)?;
                 fs::write("./priv.key", priv_key)?;
+                println!("Success");
             }
             "der" => {
                 let cert_der = cert.serialize_der()?;
@@ -25,6 +26,7 @@ fn main() -> Result<(), Box<dyn Error>> {
 
                 fs::write("./cert.der", cert_der)?;
                 fs::write("./priv.key", priv_key)?;
+                println!("Success");
             }
             _ => eprintln!("Command error")
         }
