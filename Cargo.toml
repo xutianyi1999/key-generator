@@ -1,10 +1,10 @@
 [package]
 name = "key-generator"
 version = "0.1.0"
-authors = ["xutianyi <853122726@qq.com>"]
-edition = "2018"
+authors = ["xutianyi <xutianyi1999@live.com>"]
+edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-rcgen = "0.8"
+rcgen = "0.9"
