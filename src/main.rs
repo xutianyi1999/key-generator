@@ -13,16 +13,16 @@ fn main() -> Result<(), Box<dyn Error>> {
 
         match mode.as_str() {
             "pem" => {
-                let cert_pem = cert.serialize_pem()?;
-                let priv_key = cert.serialize_private_key_pem();
+                let cert_pem = cert.cert.pem();
+                let priv_key = cert.key_pair.serialize_pem();
 
                 fs::write("./cert.pem", cert_pem)?;
                 fs::write("./priv.key", priv_key)?;
                 println!("Success");
             }
             "der" => {
-                let cert_der = cert.serialize_der()?;
-                let priv_key = cert.serialize_private_key_der();
+                let cert_der = cert.cert.der().as_ref();
+                let priv_key = cert.key_pair.serialize_der();
 
                 fs::write("./cert.der", cert_der)?;
                 fs::write("./priv.key", priv_key)?;
